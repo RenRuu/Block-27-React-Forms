@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useState } from "react";
 
 
@@ -8,15 +9,16 @@ export default function SignUpForm() {
     const [error, setError] = useState(null);
 
     async function handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault(); // prevents the browser from doing that refresh thing
         //console.log("Hello 👋");
 
         try { const response = await fetch("https://fsa-jwt-practice.herokuapp.com/signup", {
            method: "POST",
            headers: {"Content-Type": "application/json", },
-           body: JSON.stringify({ username, password }), // Send username and password in the request body
+           body: JSON.stringify({ username, password }), 
          });
-         
+
+
            const result = await response.json();
            console.log(result);
            setToken(result.token);

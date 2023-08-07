@@ -11,4 +11,5 @@ Forms = are a fundemental part of most web applications, enabling users to input
                 can form into the following 
         <input value={username} onChange={ (e)=>{setUsername(e.target.value)}}/>
 
+React: https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable
 
